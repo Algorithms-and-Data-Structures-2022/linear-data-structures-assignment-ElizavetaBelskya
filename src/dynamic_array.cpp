@@ -40,7 +40,7 @@ namespace assignment {
   }
 
   bool DynamicArray::Insert(int index, int value) {
-    if (index >= 0 && index < size_) {
+    if (index >= 0 && index <= size_) {
       if (size_ >= capacity_) {
         Resize(capacity_+kCapacityGrowthCoefficient);
       }

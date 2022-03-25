@@ -98,15 +98,9 @@ namespace assignment {
   }
 
   void LinkedList::Clear() {
-    Node* n = front_;
-    for (int i = 0; i < size_; i++) {
-      Node* k = n->next;
-      delete n;
-      n = k;
-    }
+    size_ = 0;
     front_ = nullptr;
     back_ = nullptr;
-    size_ = 0;
   }
 
   std::optional<int> LinkedList::Get(int index) const {
