@@ -21,12 +21,12 @@ namespace assignment {
   }
 
   bool LinkedQueue::Dequeue() {
-    if (size_ == 0) {
+    if (size_ == 0){
       return false;
     } else {
-      auto n = front_->next;
+      Node* n = front_;
       delete front_;
-      front_ = n;
+      front_ = n->next;
       size_--;
       return true;
     }
