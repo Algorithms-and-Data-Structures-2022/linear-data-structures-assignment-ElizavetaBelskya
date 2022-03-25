@@ -21,7 +21,7 @@ namespace assignment {
   }
 
   bool LinkedQueue::Dequeue() {
-    if (size_ == 0){
+    if (size_ == 0) {
       return false;
     } else {
       Node* n = front_;
@@ -45,11 +45,18 @@ namespace assignment {
   }
 
   std::optional<int> LinkedQueue::front() const {
-    return front_->value;
+    if (front_ != nullptr) {
+      return front_->value;
+    }
+    return std::nullopt;
   }
 
   std::optional<int> LinkedQueue::back() const {
-    return back_->value;
+    if (back_ != nullptr) {
+      return back_->value;
+    } else {
+      return std::nullopt;
+    }
   }
 
   bool LinkedQueue::IsEmpty() const {

@@ -145,11 +145,18 @@ namespace assignment {
   }
 
   std::optional<int> LinkedList::front() const {
-    return front_->value;
+    if (front_ != nullptr) {
+      return front_->value;
+    }
+    return std::nullopt;
   }
 
   std::optional<int> LinkedList::back() const {
-    return back_->value;
+    if (back_ != nullptr) {
+      return back_->value;
+    } else {
+      return std::nullopt;
+    }
   }
 
   Node* LinkedList::FindNode(int index) const {
